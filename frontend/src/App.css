@@ -1,0 +1,1294 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.auth-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+  color: #667eea;
+  border-bottom: 3px solid #667eea;
+}
+
+.auth-form {
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.form-group input.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.terms-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.terms-container input {
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.terms-container label {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.terms-container a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.terms-container a:hover {
+  text-decoration: underline;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.auth-footer {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.switch-link {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+/* Create Election Page Styles */
+.create-election {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(102, 126, 234, 0.1);
+  animation: slideIn 0.5s ease-out;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.create-election::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.create-election h2 {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.create-election .form-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.create-election label {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.create-election input,
+.create-election textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.create-election input:focus,
+.create-election textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 0 4px 12px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.create-election input.error {
+  border-color: #e53e3e;
+  background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+  animation: errorPulse 0.5s ease-in-out;
+}
+
+.create-election .error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: block;
+  animation: shake 0.5s ease-in-out;
+  font-weight: 500;
+}
+
+.create-election .btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.create-election .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.create-election .btn:hover::before {
+  left: 100%;
+}
+
+.create-election .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.create-election .btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.create-election .btn.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.create-election .btn.secondary {
+  background: linear-gradient(135deg, #718096 0%, #4a5568 50%, #2d3748 100%);
+  box-shadow: 0 4px 15px rgba(113, 128, 150, 0.3);
+}
+
+.create-election .btn.secondary:hover {
+  box-shadow: 0 8px 25px rgba(113, 128, 150, 0.4);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes errorPulse {
+  0% { background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%); }
+  50% { background: linear-gradient(135deg, #feb2b2 0%, #fed7d7 100%); }
+  100% { background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%); }
+}
+
+/* Voting Page Styles */
+.voting {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(255, 20, 147, 0.1);
+  animation: slideIn 0.6s ease-out;
+  border: 1px solid rgba(255, 20, 147, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.voting::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff1493 0%, #ff69b4 20%, #ffb6c1 40%, #ffd700 60%, #ff6347 80%, #ff1493 100%);
+  background-size: 300% 100%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.voting h2 {
+  text-align: center;
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ffb6c1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(255, 20, 147, 0.2);
+}
+
+.voting h3 {
+  text-align: center;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.voting p {
+  text-align: center;
+  color: #718096;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.voting .candidates-list {
+  margin: 2rem 0;
+}
+
+.voting .candidates-list h4 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.voting .candidate-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fef5f7 100%);
+  border: 2px solid #fce7f3;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(255, 20, 147, 0.1);
+}
+
+.voting .candidate-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.2);
+  border-color: #ff69b4;
+  background: linear-gradient(135deg, #fef5f7 0%, #fce7f3 100%);
+}
+
+.voting .candidate-card input[type="radio"] {
+  display: none;
+}
+
+.voting .candidate-card input[type="radio"]:checked + label {
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  transform: scale(1.05);
+}
+
+.voting .candidate-card input[type="radio"]:checked + label::before {
+  content: '✓';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff1493;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: checkmark 0.5s ease-in-out;
+}
+
+.voting .candidate-card label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 3rem;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+.voting .candidate-card strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.voting .candidate-card p {
+  color: #4a5568;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.voting .btn {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 30%, #ffb6c1 60%, #ffd700 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.voting .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.voting .btn:hover::before {
+  left: 100%;
+}
+
+.voting .btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 20, 147, 0.4);
+}
+
+.voting .btn:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.voting .btn:disabled {
+  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(160, 174, 192, 0.2);
+}
+
+.voting .btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(160, 174, 192, 0.2);
+}
+
+/* Additional Animations */
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Election Details Page Styles */
+.election-details {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(102, 126, 234, 0.1);
+  animation: slideIn 0.5s ease-out;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.election-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.election-details h2 {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.election-details p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.election-details h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.election-details ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.election-details li {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.election-details li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+}
+
+.election-details strong {
+  color: #2d3748;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.election-details .actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.election-details .btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.election-details .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.election-details .btn.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.election-details .btn.secondary {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+/* Candidate Registration Page Styles */
+.candidate-registration {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(255, 20, 147, 0.1);
+  animation: slideIn 0.5s ease-out;
+  border: 1px solid rgba(255, 20, 147, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.candidate-registration::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff1493 0%, #ff69b4 25%, #ffb6c1 50%, #ffd700 75%, #ff6347 100%);
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.candidate-registration h2 {
+  text-align: center;
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.candidate-registration h3 {
+  text-align: center;
+  color: #4a5568;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.candidate-registration .form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.candidate-registration label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.candidate-registration input,
+.candidate-registration textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #ffffff 0%, #fef5f7 100%);
+}
+
+.candidate-registration input:focus,
+.candidate-registration textarea:focus {
+  outline: none;
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+  background: white;
+}
+
+.candidate-registration .btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.candidate-registration .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .auth-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .auth-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .auth-tabs {
+    flex-direction: column;
+  }
+
+  .auth-tab {
+    margin-bottom: 0.5rem;
+  }
+
+  .create-election {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .create-election h2 {
+    font-size: 1.7rem;
+  }
+
+  .voting {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .voting h2 {
+    font-size: 2rem;
+  }
+
+  .voting .candidate-card {
+    padding: 1rem;
+  }
+}
+
+/* Elections List Page Styles */
+.elections-list {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 50%, #fff5f7 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(102, 126, 234, 0.1);
+  animation: slideIn 0.6s ease-out;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.elections-list::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.elections-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 15%, #f093fb 30%, #f5576c 45%, #4facfe 60%, #00f2fe 75%, #43e97b 90%, #667eea 100%);
+  background-size: 400% 100%;
+  animation: gradientShift 5s ease infinite;
+}
+
+.elections-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.elections-header h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #495057;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.filter-btn:hover::before {
+  left: 100%;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.elections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.election-card-full {
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.election-card-full::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.election-card-full:hover::before {
+  opacity: 1;
+}
+
+.election-card-full:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.election-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.election-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.status-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.election-description {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.election-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.meta-item {
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.meta-item strong {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.election-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.election-actions .btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.election-actions .btn.secondary {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+.election-actions .btn.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.election-actions .btn.info {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.no-elections {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 244, 255, 0.8) 50%, rgba(255, 245, 247, 0.9) 100%);
+  border-radius: 20px;
+  border: 2px dashed rgba(102, 126, 234, 0.3);
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.no-elections::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(255, 20, 147, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 40%);
+  animation: playgroundFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.no-elections h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+}
+
+.no-elections p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #4a5568;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+.no-elections .btn {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.no-elections .btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 244, 255, 0.8) 50%, rgba(255, 245, 247, 0.9) 100%);
+  border-radius: 20px;
+  border: 2px dashed rgba(102, 126, 234, 0.3);
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 20, 147, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
+  animation: loadingPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.loading .spinner {
+  width: 80px;
+  height: 80px;
+  border: 6px solid #e2e8f0;
+  border-top: 6px solid #667eea;
+  border-right: 6px solid #764ba2;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite, scalePulse 2s ease-in-out infinite;
+  margin: 0 auto 2rem;
+  position: relative;
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+}
+
+.loading .spinner::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 3px solid transparent;
+  border-top: 3px solid #f093fb;
+  border-radius: 50%;
+  animation: spin 2s linear infinite reverse;
+}
+
+.loading .spinner::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border-radius: 50%;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.loading p {
+  font-size: 1.3rem;
+  color: #4a5568;
+  margin: 0;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes playgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+    opacity: 1;
+  }
+}
+
+@keyframes scalePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-5px) scale(1.1); }
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .elections-list {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .elections-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .elections-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .election-meta {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .election-actions {
+    flex-direction: column;
+  }
+
+  .election-actions .btn {
+    width: 100%;
+  }
+}

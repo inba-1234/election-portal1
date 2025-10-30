@@ -1,0 +1,24 @@
+# Election Portal Development Todo List
+
+- [x] Set up backend project structure
+- [x] Install backend dependencies (Express, Mongoose, etc.)
+- [x] Create User model
+- [x] Create Election model
+- [x] Create Candidate model
+- [x] Create Vote model
+- [x] Create auth middleware
+- [x] Create auth routes (register, login, profile)
+- [x] Create elections routes (get, create, register candidate)
+- [x] Create votes routes (vote, get results)
+- [x] Set up frontend with React
+- [x] Create login/register pages with modern UI
+- [x] Create dashboard for elections with modern UI
+- [x] Create election creation page (admin)
+- [x] Create candidate registration page
+- [x] Create voting page
+- [x] Create results page
+- [ ] Integrate IPFS for vote storage
+- [ ] Implement AES encryption/decryption
+- [ ] Add real-time updates (Socket.io or polling)
+- [x] Test the application
+- [ ] Deploy the application
